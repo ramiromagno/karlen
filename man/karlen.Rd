@@ -13,14 +13,16 @@ symbol synonyms which we do use here for naming each plate. This differs from
 the names used in the column \code{target} where actual murine gene symbols are
 used.}
 \item{\code{well}}{Well identifier, i.e. the position within the 96-well plate.}
-\item{\code{dye}}{Type of fluorescence dye, in this data set it is always SYBR
-Green I master mix (Roche) (\code{"SYBR"}).}
 \item{\code{target}}{Target identifier: murine gene symbol where the amplicon maps
 to.}
+\item{\code{dye}}{Type of fluorescence dye, in this data set it is always SYBR
+Green I master mix (Roche) (\code{"SYBR"}).}
+\item{\code{sample}}{Name of the biological sample.}
 \item{\code{sample_type}}{Sample type. Most reactions in this data set are
 standard curves, i.e. \code{"std"}, but a few no template controls (\code{"ntc"}) are
 also included.}
 \item{\code{replicate}}{Replicate identifier: 1 thru 5.}
+\item{\code{copies}}{Standard copy number.}
 \item{\code{dilution}}{Dilution factor. Higher number means greater dilution, e.g.
 \code{10} means a 1:10 (ten-fold) dilution.}
 \item{\code{cycle}}{PCR cycle.}
