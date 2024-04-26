@@ -30,11 +30,46 @@ install.packages("karlen")
 
 ## Data
 
-```{r example, dev='svg'}
+The raw PCR amplification curve data by Karlen et al. (2007) is provided as one
+single eponymously named data set: `karlen`. In the original publication each
+data set pertaining one PCR plate is provided as a separate spreadsheet file.
+The column `plate` in `karlen` distinguishes each data set.
+
+The `karlen` data set comprises quantitative real-time PCRs for
+four samples (S1 thru S4), for seven amplicons targeting seven genes: Cav1,
+Ctfg, Eln, Fn1, Rpl27, Hspg2, Serpine1.
+
+For each sample/target combination a dilution series was performed. One PCR
+plate was used per amplicon, except for Rpl27 (L27) that was assayed twice
+(plates L27_1 and L27_2). The `target` column indicates the mouse gene symbol
+matching the targeted amplicon.
+
+```{r}
 library(ggplot2)
 library(dplyr, warn.conflicts = FALSE)
 library(karlen)
 
+karlen |>
+  dplyr::distinct(plate, target, sample, sample_type) |>
+  print(n = Inf)
+
+```
+
+Two dilution series schemes were assayed:
+
+1. Scheme 1 (Cav1, Eln, Hspg2, Serpine1): one-fold, ten-fold, 50-fold, and 100-fold;
+2. Scheme 2 (Ctgf, Rpl27, Fn1): one-fold, ten-fold, 50-fold, 100-fold and 1000-fold (two replicates only).
+
+```{r}
+karlen |>
+  dplyr::filter(sample_type == "std") |>
+  dplyr::distinct(plate, target, dilution) |>
+  print(n = Inf)
+```
+
+Visualization of amplification curves (NTC curves are omitted):
+
+```{r example, dev='svg'}
 karlen |>
   dplyr::filter(sample_type != "ntc") |>
   ggplot(aes(x = cycle, y = fluor, group = well, col = as.factor(dilution))) +
