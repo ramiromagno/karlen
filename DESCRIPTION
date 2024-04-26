@@ -6,7 +6,7 @@ Authors@R: c(
            comment = c(ORCID = "0000-0001-5226-3441")),
     person("Pattern Institute", role = c("cph", "fnd"))
   )
-Description:  Real-time quantitative polymerase chain reaction (qPCR) data
+Description: Real-time quantitative polymerase chain reaction (qPCR) data
     sets by Karlen et al. (2007) <doi:10.1186/1471-2105-8-131>. This package
     provides one single tabular tidy data set in long format, encompassing 32
     dilution series, for seven PCR targets and four biological samples. The
@@ -28,3 +28,5 @@ Imports:
 Depends: 
     R (>= 2.10)
 LazyData: true
+URL: https://rmagno.eu/karlen/, https://github.com/ramiromagno/karlen
+BugReports: https://github.com/ramiromagno/karlen/issues
