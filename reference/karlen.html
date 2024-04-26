@@ -39,6 +39,9 @@ PCR assays of Karlen et al. (2007) for more details."><!-- mathjax --><script sr
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
@@ -87,13 +90,16 @@ used.</p></dd>
 <dt><code>well</code></dt>
 <dd><p>Well identifier, i.e. the position within the 96-well plate.</p></dd>
 
+<dt><code>target</code></dt>
+<dd><p>Target identifier: murine gene symbol where the amplicon maps
+to.</p></dd>
+
 <dt><code>dye</code></dt>
 <dd><p>Type of fluorescence dye, in this data set it is always SYBR
 Green I master mix (Roche) (<code>"SYBR"</code>).</p></dd>
 
-<dt><code>target</code></dt>
-<dd><p>Target identifier: murine gene symbol where the amplicon maps
-to.</p></dd>
+<dt><code>sample</code></dt>
+<dd><p>Name of the biological sample.</p></dd>
 
 <dt><code>sample_type</code></dt>
 <dd><p>Sample type. Most reactions in this data set are
@@ -102,6 +108,9 @@ also included.</p></dd>
 
 <dt><code>replicate</code></dt>
 <dd><p>Replicate identifier: 1 thru 5.</p></dd>
+
+<dt><code>copies</code></dt>
+<dd><p>Standard copy number.</p></dd>
 
 <dt><code>dilution</code></dt>
 <dd><p>Dilution factor. Higher number means greater dilution, e.g.
