@@ -125,7 +125,7 @@ data_cav <-
   dplyr::arrange(plate, sample, dilution, replicate, cycle)
 
 data_ctgf <-
-  pivot(raw_data_ctgf, "CTGF", "Ctgf") |>
+  pivot(raw_data_ctgf, "CTGF", "Ccn2") |>
   dplyr::left_join(layout2, by = "well") |>
   dplyr::relocate(cycle, fluor, .after = dplyr::last_col()) |>
   dplyr::arrange(plate, sample, dilution, replicate, cycle)
