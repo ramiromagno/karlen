@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/karlen)](https://CRAN.R-project.org/package=karlen)
+[![R-CMD-check](https://github.com/ramiromagno/karlen/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ramiromagno/karlen/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 `{karlen}` provides real-time PCR data sets by Karlen et al. (2007) in tidy

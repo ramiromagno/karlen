@@ -7,6 +7,7 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/karlen)](https://CRAN.R-project.org/package=karlen)
+[![R-CMD-check](https://github.com/ramiromagno/karlen/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ramiromagno/karlen/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 `{karlen}` provides real-time PCR data sets by Karlen et al. (2007) in
@@ -86,10 +87,10 @@ karlen |>
 
 Two dilution series schemes were assayed:
 
-1.  Scheme 1 (Cav1, Eln, Hspg2, Serpine1): one-fold, ten-fold, 50-fold,
-    and 100-fold;
-2.  Scheme 2 (Ctgf, Rpl27, Fn1): one-fold, ten-fold, 50-fold, 100-fold
-    and 1000-fold (two replicates only).
+1.  Scheme 1 (Cav1, Eln, Hspg2, Serpine1): 1-fold, 10-fold, 50-fold, and
+    100-fold;
+2.  Scheme 2 (Ctgf, Rpl27, Fn1): 1-fold, 10-fold, 50-fold, 100-fold and
+    1000-fold (two replicates only).
 
 ``` r
 karlen |>
