@@ -33,9 +33,9 @@ also included.}
 \description{
 One single tabular tidy data set in long format, encompassing 32 dilution
 series, for seven PCR targets and four biological samples. The targeted
-amplicons are within the murine genes: Cav1, Ctfg, Eln, Fn1, Rpl27, Hspg2, and
+amplicons are within the murine genes: Cav1, Ccn2, Eln, Fn1, Rpl27, Hspg2, and
 Serpine1, respectively. Dilution series: scheme 1 (Cav1, Eln, Hspg2,
-Serpine1): 1-fold, 10-fold, 50-fold, and 100-fold; scheme 2 (Ctgf, Rpl27,
+Serpine1): 1-fold, 10-fold, 50-fold, and 100-fold; scheme 2 (Ccn2, Rpl27,
 Fn1): 1-fold, 10-fold, 50-fold, 100-fold and 1000-fold. For each concentration
 there are five replicates, except for the 1000-fold concentration, where only
 two replicates were performed. Each amplification curve is 40 cycles long.
