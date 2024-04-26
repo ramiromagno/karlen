@@ -2,7 +2,6 @@
 % Please edit documentation in R/karlen-package.R
 \docType{package}
 \name{karlen-package}
-\alias{karlen}
 \alias{karlen-package}
 \title{karlen: Real-Time PCR Data Sets by Karlen et al. (2007)}
 \description{
