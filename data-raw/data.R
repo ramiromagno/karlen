@@ -9,15 +9,15 @@ sample_names <- paste0("S", 1:4)
 
 # NB: We assign the `plate` values after the `amplicon` because each plate was
 # used for one amplicon (gene).
-pivot <- function(tbl, amplicon) {
+pivot <- function(tbl, plate, amplicon = plate) {
   tbl |>
     tidyr::pivot_longer(cols = -1L,
                         names_to = "well",
                         values_to = "fluor") |>
     dplyr::transmute(
-      plate = amplicon,
+      plate = plate,
       well = rep(wells[seq_len(ncol(tbl) - 1L)], 40),
-      target = plate,
+      target = amplicon,
       cycle = `Cycle No.`,
       fluor
     )
@@ -119,50 +119,65 @@ raw_data_pai1 <-
                      range = "A1:CG41")
 
 data_cav <-
-  pivot(raw_data_cav, "CAV") |>
+  pivot(raw_data_cav, "CAV", "Cav1") |>
   dplyr::left_join(layout, by = "well") |>
   dplyr::relocate(cycle, fluor, .after = dplyr::last_col()) |>
   dplyr::arrange(plate, sample, dilution, replicate, cycle)
 
 data_ctgf <-
-  pivot(raw_data_ctgf, "CTGF") |>
+  pivot(raw_data_ctgf, "CTGF", "Ctgf") |>
   dplyr::left_join(layout2, by = "well") |>
   dplyr::relocate(cycle, fluor, .after = dplyr::last_col()) |>
   dplyr::arrange(plate, sample, dilution, replicate, cycle)
 
 data_eln <-
-  pivot(raw_data_eln, "ELN") |>
+  pivot(raw_data_eln, "ELN", "Eln") |>
   dplyr::left_join(layout, by = "well") |>
   dplyr::relocate(cycle, fluor, .after = dplyr::last_col()) |>
   dplyr::arrange(plate, sample, dilution, replicate, cycle)
 
 data_L27_1 <-
-  pivot(raw_data_L27_1, "L27_1") |>
+  pivot(raw_data_L27_1, "L27_1", "Rpl27") |>
   dplyr::left_join(layout2, by = "well") |>
   dplyr::relocate(cycle, fluor, .after = dplyr::last_col()) |>
   dplyr::arrange(plate, sample, dilution, replicate, cycle)
 
 data_L27_2 <-
-  pivot(raw_data_L27_2, "L27_2") |>
+  pivot(raw_data_L27_2, "L27_2", "Rpl27") |>
   dplyr::left_join(layout2, by = "well") |>
   dplyr::relocate(cycle, fluor, .after = dplyr::last_col()) |>
   dplyr::arrange(plate, sample, dilution, replicate, cycle)
 
 data_fn <-
-  pivot(raw_data_fn, "FN") |>
+  pivot(raw_data_fn, "FN", "Fn1") |>
   dplyr::left_join(layout2, by = "well") |>
   dplyr::relocate(cycle, fluor, .after = dplyr::last_col()) |>
   dplyr::arrange(plate, sample, dilution, replicate, cycle)
 
+# The perlecan gene has symbol Hspg2.
 data_perl <-
-  pivot(raw_data_perl, "Perl") |>
+  pivot(raw_data_perl, "Perl", "Hspg2") |>
   dplyr::left_join(layout, by = "well") |>
   dplyr::relocate(cycle, fluor, .after = dplyr::last_col()) |>
   dplyr::arrange(plate, sample, dilution, replicate, cycle)
 
+
+layout_pai1 <-
+  dplyr::bind_rows(
+    layout,
+    tibble::tibble(
+      well = "G12",
+      dye = "SYBR",
+      sample = NA_character_,
+      sample_type = "ntc",
+      replicate = as.character(4L),
+      copies = 0L,
+      dilution = NA_integer_
+    )
+  )
 data_pai1 <-
-  pivot(raw_data_pai1, "PAI1") |>
-  dplyr::left_join(layout, by = "well") |>
+  pivot(raw_data_pai1, "PAI1", "Serpine1") |>
+  dplyr::left_join(layout_pai1, by = "well") |>
   dplyr::relocate(cycle, fluor, .after = dplyr::last_col()) |>
   dplyr::arrange(plate, sample, dilution, replicate, cycle)
 
