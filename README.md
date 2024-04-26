@@ -149,4 +149,4 @@ karlen |>
   labs(color = "Fold dilution")
 ```
 
-<img src="man/figures/README-example-1.svg" width="100%" />
+<img src="man/figures/README-example-1.png" width="100%" />

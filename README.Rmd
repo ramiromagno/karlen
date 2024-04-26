@@ -57,8 +57,8 @@ karlen |>
 
 Two dilution series schemes were assayed:
 
-1. Scheme 1 (Cav1, Eln, Hspg2, Serpine1): one-fold, ten-fold, 50-fold, and 100-fold;
-2. Scheme 2 (Ctgf, Rpl27, Fn1): one-fold, ten-fold, 50-fold, 100-fold and 1000-fold (two replicates only).
+1. Scheme 1 (Cav1, Eln, Hspg2, Serpine1): 1-fold, 10-fold, 50-fold, and 100-fold;
+2. Scheme 2 (Ctgf, Rpl27, Fn1): 1-fold, 10-fold, 50-fold, 100-fold and 1000-fold (two replicates only).
 
 ```{r}
 karlen |>
@@ -69,7 +69,7 @@ karlen |>
 
 Visualization of amplification curves (NTC curves are omitted):
 
-```{r example, dev='svg'}
+```{r example, dev='png', dpi=400, fig.width=10, fig.height=15}
 karlen |>
   dplyr::filter(sample_type != "ntc") |>
   ggplot(aes(x = cycle, y = fluor, group = well, col = as.factor(dilution))) +
