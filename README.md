@@ -151,3 +151,10 @@ karlen |>
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
+
+## References
+
+Yann Karlen, Alan McNair, Sébastien Perseguers, Christian Mazza, and
+Nicolas Mermod. *Statistical significance of quantitative PCR*. BMC
+Bioinformatics 8, 131 (2007). doi:
+[10.1186/1471-2105-8-131](https://doi.org/10.1186/1471-2105-8-131).

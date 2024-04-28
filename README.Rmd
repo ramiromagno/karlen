@@ -80,3 +80,8 @@ karlen |>
   labs(color = "Fold dilution")
 ```
 
+## References
+
+Yann Karlen, Alan McNair, Sébastien Perseguers, Christian Mazza, and Nicolas
+Mermod. _Statistical significance of quantitative PCR_. BMC Bioinformatics 8, 131
+(2007). doi: [10.1186/1471-2105-8-131](https://doi.org/10.1186/1471-2105-8-131).
